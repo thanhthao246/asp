@@ -11,10 +11,9 @@
 
 <h2>Quản lý tất cả sản phẩm</h2>
 
-<p>
-    @Html.ActionLink("Tạo mới", "Create")
+<p class="container  col-md-3 mx-0">
+    <a href="@Url.Action("Create","Product")" class="btn btn-md btn-success "><i class="fa fa-plus"></i> &nbspThêm Sản Phẩm</a>
 </p>
-
 @using (Html.BeginForm("Index", "Product", FormMethod.Get))
 {
     <p>

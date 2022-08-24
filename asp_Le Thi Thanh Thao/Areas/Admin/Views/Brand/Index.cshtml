@@ -7,8 +7,8 @@
 
 <h2>Danh mục Thương hiệu</h2>
 
-<p>
-    @Html.ActionLink("Thêm Thương hiệu", "Create")
+<p class="container  col-md-3 mx-0">
+    <a href="@Url.Action("Create","Brand")" class="btn btn-md btn-success "><i class="fa fa-plus"></i> &nbspThêm Thương hiệu</a>
 </p>
 
 @using (Html.BeginForm("Index", "Brand", FormMethod.Get))

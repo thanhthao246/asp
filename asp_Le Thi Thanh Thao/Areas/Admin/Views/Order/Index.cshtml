@@ -1,23 +1,10 @@
-﻿@using PagedList;
-@using PagedList.Mvc;
-@model PagedList.IPagedList<asp_Le_Thi_Thanh_Thao.Context.User>
+﻿@model IEnumerable<asp_Le_Thi_Thanh_Thao.Context.Order>
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-
-<p class="container  col-md-3 mx-0">
-    <a href="@Url.Action("Create","User")" class="btn btn-md btn-success "><i class="fa fa-plus"></i> &nbspThêm</a>
-</p>
-@using (Html.BeginForm("Index", "User", FormMethod.Get))
-{
-    <p>
-        Tìm tên sản phẩm: @Html.TextBox("SearchString", ViewBag.CurrentFiler as string)
-        <input type="submit" value="Tìm kiếm" />
-    </p>
-}
 
 <style>
     .pagination {
@@ -191,19 +178,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().LastName)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().FirstName)
+            @Html.DisplayNameFor(model => model.UserId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
+            @Html.DisplayNameFor(model => model.Status)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().IsAdmin)
+            @Html.DisplayNameFor(model => model.CreatedOnUtc)
         </th>
         <th></th>
     </tr>
@@ -212,19 +196,16 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.UserId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsAdmin)
+                @Html.DisplayFor(modelItem => item.CreatedOnUtc)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
@@ -236,8 +217,3 @@
 
 </table>
 
-<div>
-
-    Trang @(Model.PageCount <Model.PageNumber ?0 :Model.PageNumber)/@Model.PageCount
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
-</div>

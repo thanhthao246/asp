@@ -25,11 +25,20 @@ namespace asp_Le_Thi_Thanh_Thao.Context
 
         public System.Web.HttpPostedFileBase ImageUpload { get; set; }
         }
-    //public partial class Brand
-    //{
-    //    [NotMapped]
+        [MetadataType(typeof(BrandMasterData))]
+        public partial class Brand
+            {
+                [NotMapped]
 
-    //    public System.Web.HttpPostedFileBase ImageUpload { get; set; }
-    //}
+                public System.Web.HttpPostedFileBase ImageUpload { get; set; }
+            }
+        [MetadataType(typeof(UserMasterData))]
+        public partial class User
+            {
+            }
+        [MetadataType(typeof(OrderMasterData))]
+        public partial class Order
+        {
+        }
 
 }

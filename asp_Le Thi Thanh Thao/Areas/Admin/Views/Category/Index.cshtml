@@ -10,8 +10,8 @@
 
 <h2>Danh mục sản phẩm</h2>
 
-<p>
-    @Html.ActionLink("Thêm danh mục sản phẩm", "Create")
+<p class="container  col-md-3 mx-0">
+    <a href="@Url.Action("Create","Category")" class="btn btn-md btn-success "><i class="fa fa-plus"></i> &nbspThêm Danh Mục</a>
 </p>
 
 @using (Html.BeginForm("Index", "Category", FormMethod.Get))
