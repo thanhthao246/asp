@@ -15,11 +15,10 @@ namespace asp_Le_Thi_Thanh_Thao.Context
     public partial class User
     {
         public int Id { get; set; }
-        public string FirsName { get; set; }
         public string LastName { get; set; }
+        public string FirstName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public Nullable<bool> IsAdmin { get; set; }
-        public string FirstName { get; internal set; }
     }
 }

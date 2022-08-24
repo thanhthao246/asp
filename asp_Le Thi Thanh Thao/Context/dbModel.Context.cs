@@ -13,10 +13,10 @@ namespace asp_Le_Thi_Thanh_Thao.Context
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QL_BanHangEntities1 : DbContext
+    public partial class QL_BanHangEntities3 : DbContext
     {
-        public QL_BanHangEntities1()
-            : base("name=QL_BanHangEntities1")
+        public QL_BanHangEntities3()
+            : base("name=QL_BanHangEntities3")
         {
         }
     
@@ -25,10 +25,11 @@ namespace asp_Le_Thi_Thanh_Thao.Context
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Brand> Brands { get; set; }
     }
 }

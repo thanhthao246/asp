@@ -9,16 +9,16 @@ namespace asp_Le_Thi_Thanh_Thao.Controllers
 {
     public class CategoryController : Controller
     {
-        QL_BanHangEntities1 objQL_BanHangEntities1 = new QL_BanHangEntities1();
+        QL_BanHangEntities3 objQL_BanHangEntities2 = new QL_BanHangEntities3();
         // GET: Category
         public ActionResult Index()
         {
-            var lstCategory = objQL_BanHangEntities1.Categories.ToList();
+            var lstCategory = objQL_BanHangEntities2.Categories.ToList();
             return View(lstCategory);
         }
         public ActionResult ProductCategory(int Id)
         {
-            var ListProduct = objQL_BanHangEntities1.Products.Where(n => n.CategoryId == Id).ToList();
+            var ListProduct = objQL_BanHangEntities2.Products.Where(n => n.CategoryId == Id).ToList();
             return View(ListProduct);
         }
     }

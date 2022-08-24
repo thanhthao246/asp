@@ -12,14 +12,14 @@ namespace asp_Le_Thi_Thanh_Thao.Controllers
 {
     public class HomeController : Controller
     {
-        QL_BanHangEntities1 objQL_BanHangEntities1 = new QL_BanHangEntities1();
+        QL_BanHangEntities3 objQL_BanHangEntities2 = new QL_BanHangEntities3();
         public ActionResult Index()
         {
             HomeModel objHomeModel = new HomeModel();
 
-            objHomeModel.ListCategory = objQL_BanHangEntities1.Categories.ToList();
+            objHomeModel.ListCategory = objQL_BanHangEntities2.Categories.ToList();
 
-            objHomeModel.ListProduct = objQL_BanHangEntities1.Products.ToList();
+            objHomeModel.ListProduct = objQL_BanHangEntities2.Products.ToList();
             return View(objHomeModel);
         }
         [HttpGet]
@@ -34,13 +34,13 @@ namespace asp_Le_Thi_Thanh_Thao.Controllers
             //Kiem tra va luu vao database
             if (ModelState.IsValid)
             {
-                var check = objQL_BanHangEntities1.Users.FirstOrDefault(s => s.Email == _user.Email);
+                var check = objQL_BanHangEntities2.Users.FirstOrDefault(s => s.Email == _user.Email);
                 if (check == null)
                 {
                     _user.Password = GetMD5(_user.Password);
-                    objQL_BanHangEntities1.Configuration.ValidateOnSaveEnabled = false;
-                    objQL_BanHangEntities1.Users.Add(_user);
-                    objQL_BanHangEntities1.SaveChanges();
+                    objQL_BanHangEntities2.Configuration.ValidateOnSaveEnabled = false;
+                    objQL_BanHangEntities2.Users.Add(_user);
+                    objQL_BanHangEntities2.SaveChanges();
                     return RedirectToAction("Index");
 
                 }
@@ -68,7 +68,7 @@ namespace asp_Le_Thi_Thanh_Thao.Controllers
 
 
                 var f_password = GetMD5(password);
-                var data = objQL_BanHangEntities1.Users.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
+                var data = objQL_BanHangEntities2.Users.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
                 if (data.Count() > 0)
                 {
                     //add session

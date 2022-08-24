@@ -9,11 +9,11 @@ namespace asp_Le_Thi_Thanh_Thao.Controllers
 {
     public class ProductController : Controller
     {
-        QL_BanHangEntities1 objQL_BanHangEntities1 = new QL_BanHangEntities1();
+        QL_BanHangEntities3 objQL_BanHangEntities2 = new QL_BanHangEntities3();        
         // GET: Product
         public ActionResult Detail(int Id)
         {
-            var objProduct = objQL_BanHangEntities1.Products.Where(n => n.Id == Id).FirstOrDefault();
+            var objProduct = objQL_BanHangEntities2.Products.Where(n => n.Id == Id).FirstOrDefault();
             return View(objProduct);
         }
     }

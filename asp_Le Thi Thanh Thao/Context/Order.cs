@@ -16,9 +16,8 @@ namespace asp_Le_Thi_Thanh_Thao.Context
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> productid { get; set; }
-        public Nullable<double> Price { get; set; }
-        public Nullable<int> Status { get; set; }
-        public Nullable<System.DateTime> CreatedOnUtc { get; set; }
+        public int UserId { get; set; }
+        public int Status { get; set; }
+        public System.DateTime CreatedOnUtc { get; set; }
     }
 }
