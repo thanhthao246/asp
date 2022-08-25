@@ -37,10 +37,8 @@ namespace asp_Le_Thi_Thanh_Thao.Models
         public Nullable<bool> ShowOnHomePage { get; set; }
         public Nullable<int> DisplayOrder { get; set; }
         [Display(Name = "Ngày tạo")]
-
         public Nullable<System.DateTime> CreatedOnUtc { get; set; }
         [Display(Name = "Ngày cập nhật")]
-
         public Nullable<System.DateTime> UpdatedOnUtc { get; set; }
 
     }

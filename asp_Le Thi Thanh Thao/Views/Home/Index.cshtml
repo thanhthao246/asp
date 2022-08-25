@@ -67,9 +67,9 @@
                                 <div class="card-banner border-bottom">
                                     <div class="py-3" style="width:80%">
                                         <h6 class="card-title">@item.Name</h6>
-                                        <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
+                                        <a href="#" class="btn btn-secondary btn-sm"> Xem ngay </a>
                                     </div>
-                                    <img src="~/Content/images/items/h1.jpg" height="80" class="img-bg">
+                                    <img src="~/Content/images/items/@item.Avatar" height="80" class="img-bg">
                                 </div>
 
                             }
@@ -129,9 +129,8 @@
                 <div class="col-md-3">
 
                     <div class="home-category-banner bg-light-orange">
-                        <h5 class="title">Best trending clothes only for summer</h5>
-                        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
+                        <h5 class="title">Trang sức xu hướng dành cho mọi lứa tuổi</h5>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Xem ngay</a>
                         <img src="~/Content/images/items/h13.jpg" class="img-bg">
                     </div>
 
@@ -167,9 +166,8 @@
                 <div class="col-md-3">
 
                     <div class="home-category-banner bg-light-orange">
-                        <h5 class="title">Machinery items for manufacturers</h5>
-                        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
+                        <h5 class="title">Các mặt hàng đucợ thiết kế thủ công chuyên nghiệp</h5>
+                        <a href="#" class="btn btn-outline-primary rounded-pill">Xem ngay</a>
                         <img src="~/Content/images/items/h9.jpg" class="img-bg">
                     </div>
 
@@ -193,69 +191,6 @@
         </div> <!-- card.// -->
     </section>
     <!-- =============== SECTION 2 END =============== -->
-    <!-- =============== SECTION REQUEST =============== -->
-
-    <section class="padding-bottom">
-
-        <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Request for Quotation</h4>
-        </header>
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card-banner banner-quote overlay-gradient" style="background-image: url('~/Content/images/banners/banner9.jpg');">
-                    <div class="card-img-overlay white">
-                        <h3 class="card-title">An easy way to send request to suppliers</h3>
-                        <p class="card-text" style="max-width: 400px">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt.
-                        </p>
-                        <a href="" class="btn btn-primary rounded-pill">Learn more</a>
-                    </div>
-                </div>
-            </div> <!-- col // -->
-            <div class="col-md-4">
-
-                <div class="card card-body">
-                    <h4 class="title py-3">One Request, Multiple Quotes</h4>
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" name="" placeholder="What are you looking for?" type="text">
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" placeholder="Quantity" name="" type="text">
-
-                                <select class="custom-select form-control">
-                                    <option>Pieces</option>
-                                    <option>Litres</option>
-                                    <option>Tons</option>
-                                    <option>Gramms</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group text-muted">
-                            <p>Select template type:</p>
-                            <label class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="option1">
-                                <span class="form-check-label">Request price</span>
-                            </label>
-                            <label class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="option2">
-                                <span class="form-check-label">Request a sample</span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-warning">Request for quote</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div> <!-- col // -->
-        </div> <!-- row // -->
-    </section>
-
-    <!-- =============== SECTION REQUEST .//END =============== -->
     <!-- =============== SECTION ITEMS =============== -->
     <section class="padding-bottom-sm">
 
@@ -271,7 +206,7 @@
                         <a href="#" class="img-wrap"> <img src="~/Content/images/items/@item.Avatar"> </a>
                         <figcaption class="info-wrap">
                             <a href="#" class="title">@item.Name</a>
-                            <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+                            <div class="price mt-1">@item.Price</div> <!-- price-wrap.// -->
                         </figcaption>
                     </div>
                 </div> <!-- col.// -->
@@ -284,42 +219,38 @@
     <section class="padding-bottom">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Trade services</h4>
+            <h4 class="title-section text-uppercase">Khách hàng Feedback</h4>
         </header>
 
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <article class="card card-post">
-                    <img src="~/Content/images/posts/1.jpg" class="card-img-top">
+                    <img src="~/Content/images/items/h1.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h6 class="title">Trade Assurance</h6>
                         <p class="small text-uppercase text-muted">Order protection</p>
                     </div>
                 </article> <!-- card.// -->
             </div> <!-- col.// -->
             <div class="col-md-3 col-sm-6">
                 <article class="card card-post">
-                    <img src="~/Content/images/posts/2.jpg" class="card-img-top">
+                    <img src="~/Content/images/items/h5.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h6 class="title">Pay anytime</h6>
                         <p class="small text-uppercase text-muted">Finance solution</p>
                     </div>
                 </article> <!-- card.// -->
             </div> <!-- col.// -->
             <div class="col-md-3 col-sm-6">
                 <article class="card card-post">
-                    <img src="~/Content/images/posts/3.jpg" class="card-img-top">
+                    <img src="~/Content/images/items/h9.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h6 class="title">Inspection solution</h6>
                         <p class="small text-uppercase text-muted">Easy Inspection</p>
                     </div>
                 </article> <!-- card.// -->
             </div> <!-- col.// -->
             <div class="col-md-3 col-sm-6">
                 <article class="card card-post">
-                    <img src="~/Content/images/posts/4.jpg" class="card-img-top">
+                    <img src="~/Content/images/items/h14.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h6 class="title">Ocean and Air Shipping</h6>
                         <p class="small text-uppercase text-muted">Logistic services</p>
                     </div>
                 </article> <!-- card.// -->

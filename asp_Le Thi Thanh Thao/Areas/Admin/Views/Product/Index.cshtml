@@ -198,9 +198,9 @@
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().ShortDes)
-        </th>
+        </th>*@
         @*<th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().FullDescription)
         </th>*@
@@ -227,9 +227,9 @@
                 <img src="~/Content/images/items/@Html.DisplayFor(modelItem => item.Avatar)" style="width:100px;height:100px" />
                
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.ShortDes)
-            </td>
+            </td>*@
             @*<td>
                 @Html.DisplayFor(modelItem => item.FullDescription)
             </td>*@
