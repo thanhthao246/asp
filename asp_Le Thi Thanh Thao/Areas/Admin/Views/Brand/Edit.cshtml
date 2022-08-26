@@ -10,30 +10,32 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <div class="container d-flex justify-content-end">
-            <a href="@Url.Action("Index","Brand")" class="btn btn-ms btn-primary "> <i class="fas fa-arrow-left text-white"></i>Trở về</a>
+<div class="form-horizontal">
+    <hr />
+    <div class=" d-flex justify-content-start">
+        <div class=" mx-2">
+            <a href="@Url.Action("Index","Brand")" class="btn btn-ms btn-default ">Trở về</a>
         </div>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" name="ImageUpload" />
-                </div>
-                @Html.Hidden("oldimage", @Model.Avatar)
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="ImageUpload" />
         </div>
+        @Html.Hidden("oldimage", @Model.Avatar)
+    </div>
+</div>
 
         @*<div class="form-group">
             @Html.LabelFor(model => model.Slug, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -89,7 +91,3 @@
             </div>
         </div>
 }
-
-<div>
-    @Html.ActionLink("Trở lại", "Index")
-</div>

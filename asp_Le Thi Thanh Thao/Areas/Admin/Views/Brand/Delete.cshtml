@@ -4,10 +4,59 @@
     ViewBag.Title = "Delete";
 }
 
+<style>
 
+    dl {
+        background-color: #ccf5ff;
+    }
+
+    .ie7 dl {
+        overflow: hidden;
+    }
+
+    dt,
+    dd {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+        dd ~ dt,
+        dd ~ dd {
+            border-top: 1px solid #bdc8ca;
+        }
+
+    dt {
+        float: left;
+        width: 35%;
+        padding-bottom: 0;
+    }
+
+    .ie7 dt {
+        padding-bottom: 10px;
+        clear: both;
+    }
+
+    dd {
+        margin-left: 35%;
+        background-color: #fff;
+    }
+
+    .ie7 dd {
+        margin-left: 40%;
+        overflow: hidden;
+    }
+
+    dd:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    /*dt*/ .row2 + dd:after {
+        content: none;
+    }
+</style>
 <h3>Bạn có chắc chắn muốn xóa cái này không?</h3>
 <div>
-    <h4>Brand</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -23,7 +72,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Avatar)
+            <img src="~/Content/images/items/@Html.DisplayFor(model => model.Avatar)" style="width:100px;height:100px" />
         </dd>
 
         <dt>
@@ -76,12 +125,16 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("Delete", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Xóa" class="btn btn-default" /> |
-            @Html.ActionLink("Trở lại", "Index")
+    <div class="form-actions no-color">
+        <input type="submit" value="Xóa" class="btn btn-default" /> |
+        <div class="btn  p-2 btn-default ">
+
+            @Html.ActionLink("Trở về", "Index")
         </div>
-    }
+    </div>
+     }
 </div>

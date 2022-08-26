@@ -156,7 +156,7 @@ namespace asp_Le_Thi_Thanh_Thao.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit( Product objProduct, FormCollection form)
         {
-           
+            this.LoadData();
             if (objProduct.ImageUpload != null)
             {
                 string fileName = Path.GetFileNameWithoutExtension(objProduct.ImageUpload.FileName);

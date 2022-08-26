@@ -4,12 +4,70 @@
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<style>
 
+    dl {
+        background-color: #ccf5ff;
+    }
+
+    .ie7 dl {
+        overflow: hidden;
+    }
+
+    dt,
+    dd {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+        dd ~ dt,
+        dd ~ dd {
+            border-top: 1px solid #bdc8ca;
+        }
+
+    dt {
+        float: left;
+        width: 35%;
+        padding-bottom: 0;
+    }
+
+    .ie7 dt {
+        padding-bottom: 10px;
+        clear: both;
+    }
+
+    dd {
+        margin-left: 35%;
+        background-color: #fff;
+    }
+
+    .ie7 dd {
+        margin-left: 40%;
+        overflow: hidden;
+    }
+
+    dd:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    /*dt*/ .row2 + dd:after {
+        content: none;
+    }
+</style>
 <h2>Details</h2>
 
 <div>
-    <h4>Category</h4>
     <hr />
+    <div class=" d-flex justify-content-start">
+        <div class=" mx-2">
+            <a href="@Url.Action("Index","Category")" class="btn btn-ms btn-default ">Trở về</a>
+        </div>
+        <div class=" ">
+
+            <a href="@Url.Action("Edit","Category", new { id = Model.Id })" class="btn btn-ms btn-default mb-4">Chỉnh sửa</a>
+        </div>
+    </div>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -24,7 +82,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Avatar)
+            <img src="~/Content/images/items/@Html.DisplayFor(model => model.Avatar)" style="width:100px;height:100px" />
         </dd>
 
         <dt>
@@ -51,21 +109,21 @@
             @Html.DisplayFor(model => model.ShowOnHomePage)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.DisplayOrder)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.DisplayOrder)
-        </dd>
+        </dd>*@
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Deleted)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Deleted)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.CreatedOnUtc)
@@ -85,7 +143,3 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Chỉnh sửa danh mục", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Trở lại", "Index")
-</p>

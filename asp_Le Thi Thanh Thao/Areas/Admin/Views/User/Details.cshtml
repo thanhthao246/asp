@@ -3,12 +3,70 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
 
+    dl {
+        background-color: #ccf5ff;
+    }
+
+    .ie7 dl {
+        overflow: hidden;
+    }
+
+    dt,
+    dd {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+        dd ~ dt,
+        dd ~ dd {
+            border-top: 1px solid #bdc8ca;
+        }
+
+    dt {
+        float: left;
+        width: 35%;
+        padding-bottom: 0;
+    }
+
+    .ie7 dt {
+        padding-bottom: 10px;
+        clear: both;
+    }
+
+    dd {
+        margin-left: 35%;
+        background-color: #fff;
+    }
+
+    .ie7 dd {
+        margin-left: 40%;
+        overflow: hidden;
+    }
+
+    dd:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    /*dt*/ .row2 + dd:after {
+        content: none;
+    }
+</style>
 <h2>Chi tiết thành viên</h2>
 
 <div>
-    <h4>User</h4>
     <hr />
+    <div class=" d-flex justify-content-start">
+        <div class=" mx-2">
+            <a href="@Url.Action("Index","User")" class="btn btn-ms btn-default ">Trở về</a>
+        </div>
+        <div class=" ">
+
+            <a href="@Url.Action("Edit","User", new { id = Model.Id })" class="btn btn-ms btn-default mb-4">Chỉnh sửa</a>
+        </div>
+    </div>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.LastName)
@@ -52,7 +110,3 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Chỉnh sửa người dùng", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Trở lại", "Index")
-</p>
